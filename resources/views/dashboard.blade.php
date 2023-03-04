@@ -1,18 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
-<div>
-    @foreach($watchlists as $watchlist)
-        <form method="get" action="{{route('watchlist.delete', $watchlist->id)}}">
 
-            <p>
-               Movie: {{$watchlist->title}} ||
-               Release Year: {{$watchlist->release_year}} ||
-               Director: {{$watchlist->director_name}} {{$watchlist->director_last_name}}
-               watchlist_id: {{$watchlist->id}}
-           </p>
-        <button class="btn btn-primary" type="submit" value="{{$watchlist->id}}">Delete</button>
-       </form>
-    @endforeach
-</div>
+    <table>
+        <th>Movie Title</th>
+        <th>Release Year</th>
+        <th>Director</th>
+        <th>Rating</th>
+
+        @foreach($watchlists as $watchlist)
+        <tr>
+            <td><a href="{{route('movies.show', $watchlist->id)}}">{{$watchlist->title}}</a></td>
+            <td>{{$watchlist->release_year}} </td>
+            <td>{{$watchlist->director_name}} {{$watchlist->director_last_name}}</td>
+            <td>{{$watchlist->rating}} / 10</td>
+            <td><a href="{{route('watchlist.delete', $watchlist->id)}}">Remove</a></td>
+        </tr>
+        @endforeach
+    </table>
+
 @endsection

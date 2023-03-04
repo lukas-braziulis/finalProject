@@ -21,12 +21,7 @@ class DirectorController extends Controller
      */
     public function create()
     {
-
-        dump("hi from Directors CREATE");
-        die;
-
         return view('directors.create');
-
     }
 
     /**
@@ -34,7 +29,14 @@ class DirectorController extends Controller
      */
     public function store(Request $request)
     {
-        dd("hi from Directors Store");
+        $director = new Director();
+        $director->name = $request->name;
+        $director->last_name = $request->last_name;
+        $director->img_url = $request->img_url;
+
+        $director->save();
+
+        return view('directors.directors', ['directors' => Director::all()]);
     }
 
     /**
@@ -54,24 +56,36 @@ class DirectorController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Director $director)
+    public function edit($id)
     {
-        //
+        return view('directors.edit', [
+            'director' => Director::findOrFail($id)
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Director $director)
+    public function update(Request $request, $id)
     {
-        //
+        $director = Director::findOrFail($id);
+
+        $director->name = $request->name;
+        $director->last_name = $request->last_name;
+        $director->img_url = $request->img_url;
+
+        $director->save();
+
+        return view('directors.directors', ['directors' => Director::all()]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Director $director)
+    public function destroy(int $id)
     {
-        //
+        Director::destroy($id);
+
+        return view('directors.directors', ['directors' => Director::all()]);
     }
 }

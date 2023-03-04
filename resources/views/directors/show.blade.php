@@ -25,6 +25,7 @@
                     <a href="{{route('watchlist.store', $movie->id)}}" class="btn btn-outline-primary">Add to Watchlist</a>
                 </form>
                 @endif
+                @include('layouts.editMovie')
             </div>
         </div>
     @endforeach

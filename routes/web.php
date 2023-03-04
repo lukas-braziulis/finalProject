@@ -21,11 +21,7 @@ Route::controller(MovieController::class)->group(function(){
 
 Route::controller(DirectorController::class)->group(function(){
    Route::get('/directors', 'index')->name('directors.index');
-    Route::get('/directors/{id}', 'show')->name('directors.show');
-
-    //Movie Pages
-//    Route::get('/movies/{url}', 'index')->name('movie.index');
-
+    Route::get('/directors/show/{id}', 'show')->name('directors.show');
 });
 
 Route::controller(YearController::class)->group(function(){
@@ -34,7 +30,7 @@ Route::controller(YearController::class)->group(function(){
 });
 
 Route::controller(MovieController::class)->group(function(){
-    Route::get('/movies/{url}', 'show')->name('movies.show');
+    Route::get('/movies/show/{url}', 'show')->name('movies.show');
 });
 
 
@@ -43,21 +39,26 @@ Route::middleware(['auth', 'verified'])->group(function() {
     Route::get('/dashboard', [WatchlistController::class, 'index'])->name('dashboard');
     Route::get('/dashboard/{id}', [WatchlistController::class, 'store'])->name('watchlist.store');
     Route::get('/dashboard/delete/{id}', [WatchlistController::class, 'destroy'])->name('watchlist.delete');
+});
 
+Route::middleware(['auth', 'verified'])->group(function() {
     // Directors
     Route::get('/directors/create', [DirectorController::class, 'create'])->name('directors.create');
     Route::post('/directors/store', [DirectorController::class, 'store'])->name('directors.store');
+    Route::get('/directors/edit/{id}', [DirectorController::class, 'edit'])->name('directors.edit');
+    Route::put('/directors/update/{id}', [DirectorController::class, 'update'])->name('directors.update');
+    Route::get('/directors/delete/{id}', [DirectorController::class, 'destroy'])->name('directors.delete');
+});
 
+Route::middleware(['auth', 'verified'])->group(function() {
     // Movies
-    Route::get('/movies/create', [MovieController::class, 'create'])->name('movies.create');
     Route::post('/movies/store', [MovieController::class, 'store'])->name('movies.store');
+    Route::get('/movies/create', [MovieController::class, 'create'])->name('movies.create');
     Route::get('/movies/edit/{id}', [MovieController::class, 'edit'])->name('movies.edit');
     Route::put('/movies/update/{id}', [MovieController::class, 'update'])->name('movies.update');
     Route::get('/movies/delete/{id}', [MovieController::class, 'destroy'])->name('movies.delete');
-
-
-
 });
+
 
 
 

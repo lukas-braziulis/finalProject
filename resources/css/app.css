@@ -6,7 +6,7 @@ h1 {
     color: white;
 }
 
-p {
+p, th, td {
     color: lawngreen;
 }
 

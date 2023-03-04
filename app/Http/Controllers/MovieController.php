@@ -45,8 +45,10 @@ class MovieController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $url)
+    public function show($id)
     {
+        $url = Movie::find($id)->url;
+
         $urlLinkBuilder = 'movies.'.$url;
         return view($urlLinkBuilder);
     }
