@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1 {
+    color: white;
+}
+
+p {
+    color: lawngreen;
+}
+
+img{
+    width: 200px;
+}
