@@ -3,7 +3,7 @@
 @section('title', 'Add Director')
 
 @section('content')
-    <div class="bg-white">
+    <div class="bg-white add-form">
         <form method="post" action="{{route('directors.store')}}">
             @csrf
             <div class="form-group">

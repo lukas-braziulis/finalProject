@@ -87,6 +87,9 @@ a {
     color: white;
 }
 
+
+/* Watchlist table CSS */
+
 .watchlist-table {
     width: 60vw;
     border: 1px white solid;
@@ -108,5 +111,26 @@ th {
 td {
     padding: 1rem;
     font-size: 1.5rem;
+}
+
+
+/* Add Movie & Add Director CSS */
+
+.add-form {
+    padding: 2rem;
+    border-radius: 15px;
+    width: 30vw;
+    margin: 0 auto;
+    margin-top: 1.5rem;
+
+}
+
+.form-group input{
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.form-group label {
+    font-weight: bold;
 }
 
