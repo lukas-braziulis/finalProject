@@ -2,32 +2,31 @@
 
 @section('title', 'Movies by Director')
 
-@include('layouts.addDirector')
-
 @section('content')
-    <h1>Movies by Director: {{$director['name']}} {{$director['last_name']}}</h1>
-    @foreach($movies as $movie)
-        <div class="card m-auto col-8">
-            <div class="card-body">
-                <p>{{$movie->title}}</p>
-                <img src="{{$movie->img_url}}">
-                <p>{{$movie->release_year}}</p>
-                <p>Rating: {{$movie->rating}} / 10</p>
-                <p>Directed by: {{$movie->director_name}} {{$movie->director_last_name}}</p>
-                <p>{{$movie->description}}</p>
+    <h1 class="page-title">Movies by Director: {{$director['name']}} {{$director['last_name']}}</h1>
+    <div class="display-grid-movie-cards">
+        @foreach($movies as $movie)
+            <div class="card m-auto col-8">
+                <div class="card-body">
+                    <img src="{{$movie->img_url}}">
+                    <p class="movie-title">{{$movie->title}}</p>
+                    <p class="movie-details">{{$movie->release_year}}</p>
+                    <p class="movie-details">Rating: {{$movie->rating}} / 10</p>
+                    <p class="movie-details">Directed by: {{$movie->director_name}} {{$movie->director_last_name}}</p>
+                    <p class="movie-description">{{$movie->description}}</p>
 
-                <form method="post" action="{{route('movies.show', $movie->url)}}">
-                    <a href="{{route('movies.show', $movie->url)}}" class="btn btn-outline-primary">Read Review</a>
-                </form>
+                    <div class="buttons-alignment ">
+                        <a href="{{route('movies.show', $movie->id)}}" class="btn btn-outline-primary">Read Review</a>
 
-                @if(Auth::check())
-                <form method="post" action="{{route('watchlist.store', $movie->id)}}">
-                    <a href="{{route('watchlist.store', $movie->id)}}" class="btn btn-outline-primary">Add to Watchlist</a>
-                </form>
-                @endif
-                @include('layouts.editMovie')
+                        @if(Auth::check())
+                            <form method="post" action="{{route('watchlist.store', $movie->id)}}">
+                                <a href="{{route('watchlist.store', $movie->id)}}" class="btn btn-outline-primary">Add to Watchlist</a>
+                            </form>
+                        @endif
+                    </div>
+                    @include('layouts.editMovie')
+                </div>
             </div>
-        </div>
-    @endforeach
-
+        @endforeach
+    </div>
 @endsection

@@ -11,5 +11,74 @@ p, th, td {
 }
 
 img{
-    width: 200px;
+    height: 400px;
+}
+
+a {
+    color: black;
+}
+
+.card {
+    max-width: 500px;
+    height: 100%;
+}
+
+.display-grid-movie-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    grid-gap: 1rem;
+    height: 100%;
+    align-items: space-evenly;
+
+}
+
+.card-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+.buttons-alignment {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+
+    align-items: flex-end;
+}
+
+.movie-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+}
+
+.movie-details {
+    font-size: 1.2rem;
+    margin-bottom: 3px;
+    color: black;
+
+}
+
+.movie-description {
+    /*border: 1px lightgray solid;*/
+    /*border-radius: 5px;*/
+    padding: 8px;
+    color: black;
+    text-align: justify;
+}
+
+.display-flex {
+    display: flex;
 }
