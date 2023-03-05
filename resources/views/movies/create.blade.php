@@ -28,6 +28,10 @@
                 <textarea name="description" class="form-control" placeholder="Description"></textarea>
             </div>
             <div class="form-group">
+                <label for="title">Poster Image</label>
+                <input type="text" name="img_url" class="form-control"  placeholder="Image URL">
+            </div>
+            <div class="form-group">
                 <label for="title">Link</label>
                 <input type="text" name="url" class="form-control"  placeholder="URL link">
             </div>

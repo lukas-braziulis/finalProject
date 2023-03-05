@@ -36,6 +36,8 @@ class MovieController extends Controller
         $movie->release_decade = $request->release_decade;
         $movie->description = $request->description;
         $movie->url = $request->url;
+        $movie->img_url = $request->img_url;
+
 
         $movie->save();
 
