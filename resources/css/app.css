@@ -6,7 +6,7 @@ h1 {
     color: white;
 }
 
-p, th, td {
+p {
     color: lawngreen;
 }
 
@@ -27,7 +27,7 @@ a {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 
-    grid-gap: 1rem;
+    grid-gap: 2rem;
     height: 100%;
     align-items: space-evenly;
 
@@ -82,3 +82,31 @@ a {
 .display-flex {
     display: flex;
 }
+
+.color-white, th, td {
+    color: white;
+}
+
+.watchlist-table {
+    width: 60vw;
+    border: 1px white solid;
+    margin: 0 auto;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+tr {
+    border-bottom: 1px solid white;
+}
+
+th {
+    padding: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+td {
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
