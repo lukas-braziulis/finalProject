@@ -185,3 +185,11 @@ nav {
 }
 
 
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 2rem;
+}
+
+

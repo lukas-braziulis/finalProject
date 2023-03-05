@@ -3,7 +3,7 @@
 @section('title', '{{$director->name}} {{$director->last_name}}')
 
 @section('content')
-    <div class="bg-white">
+    <div class="bg-white add-form">
         <form method="post" action="{{route('directors.update', $director->id)}}">
             @csrf
             @method('put')
