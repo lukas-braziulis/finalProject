@@ -122,7 +122,6 @@ td {
     width: 30vw;
     margin: 0 auto;
     margin-top: 1.5rem;
-
 }
 
 .form-group input{
@@ -134,3 +133,28 @@ td {
     font-weight: bold;
 }
 
+
+/* Profile Page CSS */
+.update-block {
+    padding: 2rem;
+    border-radius: 15px;
+    width: 30vw;
+    margin: 0 auto;
+    margin-top: 1.5rem;
+    background-color: white;
+}
+
+.update-block header h2 {
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.update-block header p {
+    color: black;
+}
+
+.font-medium {
+    font-size: large;
+    color: #9ca3af;
+}
