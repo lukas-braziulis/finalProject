@@ -158,3 +158,30 @@ td {
     font-size: large;
     color: #9ca3af;
 }
+
+
+/* Navigation CSS */
+.navigation-aligment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-item-end {
+    justify-content: flex-end;
+}
+
+nav {
+    width: 100vw;
+    height: 3rem;
+    margin: 0 auto;
+    padding: 5px;
+    padding-left: 30rem;
+    padding-right: 30rem;
+}
+
+.font-black {
+    color: #1a202c;
+}
+
+
